@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import CustomInput from '../../components/CustomInput';
-import CustomButton from '../../components/CustomButton';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const Login = () => {
   const [username, setUsername] = useState<string>('');
@@ -36,43 +36,39 @@ const Login = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={true}>
       <View style={styles.root}>
-        <CustomInput
-          placeholder="username"
-          setValue={setUsername}
-          value={username}
-        />
-        <CustomInput
+        <Input placeholder="username" setValue={setUsername} value={username} />
+        <Input
           placeholder="password"
           setValue={setPassword}
           value={password}
           secureTextEntry
         />
-        <CustomButton onPress={onSigninPressed} text="Sign In" />
-        <CustomButton
+        <Button onPress={onSigninPressed} text="Sign In" />
+        <Button
           onPress={onForgotPasswordPressed}
           text="Forgot password?"
           type="TERTIARY"
         />
-        <CustomButton
+        <Button
           onPress={onSignInFacebook}
           text="Sign In with Facebook"
           bgColor="#e7eaf4"
           fgColor="#4765A9"
         />
-        <CustomButton
+        <Button
           onPress={onSignInGoogle}
           text="Sign In with Google"
           bgColor="#fae9ea"
           fgColor="#dd4d44"
         />
-        <CustomButton
+        <Button
           onPress={onSignInApple}
           text="Sign In with Apple"
           bgColor="#e3e3e3"
           fgColor="#363636"
         />
 
-        <CustomButton
+        <Button
           onPress={onSignUpPressed}
           text="Don't have an account? Create one"
           type="TERTIARY"

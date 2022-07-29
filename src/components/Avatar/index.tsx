@@ -1,18 +1,19 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ViewStyle, StyleProp } from 'react-native';
 import React from 'react';
 
 interface avatarProps {
   name: String;
+  size?: String;
 }
 
-const Avatar = ({ name = 'Nolan' }: avatarProps) => {
+const Avatar = ({ name = 'Nolan', size }: avatarProps) => {
   const firstLetterOfName = (name: String) => {
     const firstLetter = name.slice(0, 1);
     return firstLetter.toUpperCase();
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, styles[`container_${size}`]]}>
       <Text style={styles.text}>{firstLetterOfName(name)}</Text>
     </View>
   );
@@ -27,6 +28,10 @@ const styles = StyleSheet.create({
     height: 24,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  container_LARGE: {
+    width: 40,
+    height: 40,
   },
   text: {
     fontWeight: 'bold',

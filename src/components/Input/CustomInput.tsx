@@ -8,7 +8,7 @@ interface inputProps {
   secureTextEntry?: boolean;
 }
 
-const CustomInput = ({
+const Input = ({
   value,
   setValue,
   placeholder,
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   input: { padding: 10 },
 });
 
-export default CustomInput;
+export default Input;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import Avatar from '../../components/Avatar';
+
+import Tile from '../../components/Tile';
 
 export const ViewFamilyMembers = () => (
   <View>
-    <Text>Family Members</Text>
-    <Avatar name="Ryan" />
+    <Tile name="Roman Comte" size="LARGE" />
   </View>
 );
